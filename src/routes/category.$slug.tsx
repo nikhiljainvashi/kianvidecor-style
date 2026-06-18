@@ -5,6 +5,7 @@ import {
   categorySlugs,
   products,
   type CategorySlug,
+  type Product,
 } from "@/lib/products";
 import { ProductCard } from "@/components/product-card";
 
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/category/$slug")({
     const slug = params.slug as CategorySlug;
     const meta = categoryMeta[slug];
     if (!meta) throw notFound();
-    const list = products.filter((p) => p.category === meta.label);
+    const list: Product[] = products.filter((p) => p.category === meta.label);
     return { slug, meta, list };
   },
   head: ({ loaderData }) => {
