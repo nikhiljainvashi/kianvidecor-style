@@ -65,12 +65,12 @@ function Index() {
           <div className="md:col-span-6">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=80"
-                alt="A sculpted lounge chair in a sunlit room"
+                src="https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/17/Franklin_Slate_Blue_Open_with_Console_Closed.jpg?c=2"
+                alt="Franklin slate-blue sectional in a quiet, sunlit living room"
                 className="h-full w-full object-cover"
               />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-xs text-cream/80">
-                <span className="uppercase tracking-widest">Velvet Curve Sofa</span>
+                <span className="uppercase tracking-widest">Franklin Sectional — Slate</span>
                 <span className="font-display text-sm">No. 01</span>
               </div>
             </div>

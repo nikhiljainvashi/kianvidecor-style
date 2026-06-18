@@ -14,8 +14,10 @@ export type Product = {
   details: string[];
 };
 
+const BH = "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280x1280/products";
+
 export const products: Product[] = [
-  // Wardrobes
+  // Wardrobes (BH does not stock these — Unsplash editorial imagery used)
   {
     id: "noir-armoire",
     name: "Noir Armoire",
@@ -65,138 +67,165 @@ export const products: Product[] = [
 
   // Sofas
   {
-    id: "marais-sofa",
-    name: "Marais Sofa",
+    id: "fae-charcoal-ls",
+    name: "Fae Loveseat — Charcoal",
+    category: "Sofas",
+    price: 1890,
+    image: `${BH}/874/3567/Fae_Sofa_Charcoal__64197.1769798563.jpg?c=2`,
+    description:
+      "A compact loveseat in deep charcoal weave with sculpted arms and a low, generous seat.",
+    details: [
+      "Performance fabric, charcoal",
+      "Kiln-dried hardwood frame",
+      "Dimensions: 178 × 92 × 82 cm",
+    ],
+  },
+  {
+    id: "hudson-smoke-sofa",
+    name: "Hudson Smoke Extended Sofa",
     category: "Sofas",
     price: 3450,
     image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1400&q=80",
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/18/Hudson_Smoke_Ext_Sofa.jpg?c=2",
     description:
-      "Low, generous, and entirely unbothered. Down-wrapped cushions in a sand linen weave.",
+      "An extended three-seat sofa in smoke-toned linen — long, low, and unbothered.",
     details: [
-      "European linen, removable covers",
-      "Kiln-dried hardwood frame",
-      "Dimensions: 240 × 100 × 72 cm",
+      "Smoke linen upholstery",
+      "Down-wrapped cushions",
+      "Dimensions: 260 × 100 × 78 cm",
     ],
   },
   {
-    id: "velvet-curve-sofa",
-    name: "Velvet Curve Sofa",
+    id: "hendrix-sectional-ivory",
+    name: "Hendrix Sectional — Ivory",
     category: "Sofas",
-    price: 4120,
-    image:
-      "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=80",
+    price: 4280,
+    image: `${BH}/855/3724/Hendrix_Ivory_Azure_Off_White_Sectional_Open__14557.1769800543.jpg?c=2`,
     description:
-      "A sculpted curved sofa upholstered in deep cocoa velvet — the centerpiece your living room has been waiting for.",
+      "A generous L-shape sectional in off-white with hand-tied cushions and a soft channel back.",
     details: [
-      "Italian velvet upholstery",
+      "Italian off-white weave",
       "Hand-tied spring base",
-      "Dimensions: 260 × 95 × 78 cm",
+      "Dimensions: 310 × 215 × 80 cm",
     ],
   },
   {
-    id: "lumen-lounge-chair",
-    name: "Lumen Lounge Chair",
+    id: "walker-sofa-mocha",
+    name: "Walker Sofa — Mocha",
     category: "Sofas",
-    price: 1240,
-    image:
-      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1400&q=80",
+    price: 2480,
+    image: `${BH}/867/3653/Walker_Mocha_2_angle__08525.1769799849.jpg?c=2`,
     description:
-      "A sculpted lounge chair upholstered in bouclé, designed for slow afternoons and considered conversation.",
+      "Mid-century silhouette in rich mocha — pillow-back comfort with a clean, tailored line.",
     details: [
-      "Solid oak frame, hand-finished",
-      "Ivory bouclé upholstery",
-      "Dimensions: 82 × 78 × 74 cm",
+      "Mocha performance velvet",
+      "Solid wood legs",
+      "Dimensions: 220 × 95 × 82 cm",
     ],
   },
 
   // Tables & Chairs
   {
-    id: "atelier-dining-table",
-    name: "Atelier Dining Table",
+    id: "oden-dining-table",
+    name: "Oden Dining Table",
     category: "Tables & Chairs",
     price: 2890,
     image:
-      "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=1400&q=80",
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/15/Oden_Dining_Table.jpg?c=2",
     description:
-      "A monolithic travertine top resting on a blackened steel base. Seats six in unhurried elegance.",
+      "Solid oak dining table with a hand-rubbed finish and a sculpted pedestal base. Seats six.",
     details: [
-      "Honed travertine top",
-      "Blackened steel base",
+      "Solid white oak",
+      "Hand-rubbed matte finish",
       "Dimensions: 220 × 95 × 75 cm",
     ],
   },
   {
-    id: "kintsu-side-table",
-    name: "Kintsu Side Table",
+    id: "wawa-dining-table",
+    name: "Wawa Dining Table",
     category: "Tables & Chairs",
-    price: 620,
-    image:
-      "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=1400&q=80",
+    price: 2140,
+    image: `${BH}/870/4090/Wawa_DT_Front__84709.1770325404.jpg?c=2`,
     description:
-      "A petite walnut side table with a brass inlay detail — at home beside a reading chair.",
-    details: ["Solid walnut", "Brass inlay", "Dimensions: 45 × 45 × 55 cm"],
+      "A compact round dining table with a fluted column base — equally at home in a breakfast nook or studio.",
+    details: [
+      "Fluted oak base",
+      "Stone-look composite top",
+      "Diameter: 140 cm",
+    ],
   },
   {
-    id: "noir-dining-chair",
-    name: "Noir Dining Chair (Set of 2)",
+    id: "dt6344-dining-table",
+    name: "DT6344 Sculpted Dining Table",
+    category: "Tables & Chairs",
+    price: 2640,
+    image: `${BH}/856/4069/DT6344_Side__57920.1770324705.jpg?c=2`,
+    description:
+      "Architectural dining table with a sculpted twin-pedestal base and a warm-toned top.",
+    details: [
+      "Twin sculpted pedestals",
+      "Warm walnut veneer top",
+      "Dimensions: 200 × 100 × 75 cm",
+    ],
+  },
+  {
+    id: "leonard-chair-grey",
+    name: "Leonard Lounge Chair — Grey",
     category: "Tables & Chairs",
     price: 980,
-    image:
-      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1400&q=80",
+    image: `${BH}/863/3674/KM.601H._Montana_Light_Grey_2__11820.1769800209.jpg?c=2`,
     description:
-      "Spindle-back dining chair in blackened ash with a hand-woven rush seat. Sold in pairs.",
+      "A bouclé-style lounge chair in light Montana grey — generous, soft, and quietly sculptural.",
     details: [
-      "Blackened ash frame",
-      "Hand-woven rush seat",
-      "Dimensions: 45 × 48 × 88 cm",
+      "Montana grey bouclé",
+      "Solid hardwood frame",
+      "Dimensions: 82 × 86 × 78 cm",
     ],
   },
 
   // Beds
   {
-    id: "halcyon-bed",
-    name: "Halcyon Bed",
+    id: "milan-bed-slate",
+    name: "Milan Bed — Slate Blue",
     category: "Beds",
     price: 3260,
+    image:
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/16/Milan_Bed_Slate_Blue.jpg?c=2",
+    description:
+      "Low-profile platform bed with a channel-tufted slate-blue headboard. Enveloping and quiet.",
+    details: [
+      "Slate-blue performance velvet",
+      "Solid oak base, slatted support",
+      "King size: 200 × 210 cm",
+    ],
+  },
+  {
+    id: "halcyon-bed",
+    name: "Halcyon Bouclé Bed",
+    category: "Beds",
+    price: 3490,
     image:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
     description:
       "A low-profile platform bed with a sculpted bouclé headboard — quiet and enveloping.",
     details: [
-      "Bouclé headboard, solid oak base",
+      "Ivory bouclé headboard, oak base",
       "King size: 200 × 210 cm",
       "Slatted support, no box spring needed",
     ],
   },
   {
-    id: "velluto-bed",
-    name: "Velluto Velvet Bed",
+    id: "guily-sofabed",
+    name: "Guily Sofabed — Light Grey",
     category: "Beds",
-    price: 3890,
-    image:
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=80",
+    price: 1480,
+    image: `${BH}/853/3740/Guily_Front__58695.1769800639.jpg?c=2`,
     description:
-      "An arched velvet headboard with channel tufting, framed by a blackened brass base.",
+      "A clean-lined sofabed in light grey weave — daytime sofa, overnight guest bed, no compromise.",
     details: [
-      "Italian velvet, channel-tufted",
-      "Blackened brass base",
-      "King size: 200 × 210 cm",
-    ],
-  },
-  {
-    id: "atelier-canopy-bed",
-    name: "Atelier Canopy Bed",
-    category: "Beds",
-    price: 4480,
-    image:
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1400&q=80",
-    description:
-      "Slim-profile four-poster in solid oak — architectural without ever feeling heavy.",
-    details: [
-      "Solid European oak",
-      "King size: 200 × 210 cm",
-      "Height: 215 cm",
+      "Light grey performance weave",
+      "Click-clack conversion",
+      "Dimensions: 200 × 95 × 82 cm",
     ],
   },
 ];
@@ -219,25 +248,25 @@ export const categoryMeta: Record<
     label: "Sofas",
     tagline: "The long quiet evening.",
     image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80",
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/14/Wonder_Sand_6PCS_Lifestyle_V2.jpg?c=2",
     description:
-      "Down-wrapped linen, sculpted velvet curves, bouclé lounge chairs — seating made to slow the room down.",
+      "Sectionals, loveseats, and channel-back sofas in linen, velvet, and bouclé — seating made to slow the room down.",
   },
   "tables-chairs": {
     label: "Tables & Chairs",
     tagline: "Where the table makes the room.",
     image:
-      "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=1600&q=80",
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/15/Oden_Dining_Table.jpg?c=2",
     description:
-      "Travertine tops, blackened steel bases, spindle-back chairs in rush and ash — a quietly opinionated dining language.",
+      "Solid oak dining tables, sculpted pedestals, and bouclé lounge chairs — a quietly opinionated dining language.",
   },
   beds: {
     label: "Beds",
     tagline: "Beds you don't get out of.",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+      "https://cdn11.bigcommerce.com/s-589pkbp2b4/images/stencil/1280w/carousel/16/Milan_Bed_Slate_Blue.jpg?c=2",
     description:
-      "Low-profile platforms, channel-tufted velvet, and slim-line canopies — enveloping beds for the considered bedroom.",
+      "Low-profile platforms, channel-tufted velvet, and convertible sofabeds — enveloping beds for the considered bedroom.",
   },
 };
 
