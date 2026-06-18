@@ -1,10 +1,31 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { products } from "@/lib/products";
+import { categoryMeta, categorySlugs, products } from "@/lib/products";
 import { ProductCard } from "@/components/product-card";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "KIANVI.DECOR — Luxury furniture for the considered home" },
+      {
+        name: "description",
+        content:
+          "Luxury wardrobes, elegant sofas, sculpted tables and chairs, and enveloping beds — handmade in small runs, shipped white-glove.",
+      },
+      {
+        property: "og:title",
+        content: "KIANVI.DECOR — Luxury furniture for the considered home",
+      },
+      {
+        property: "og:description",
+        content:
+          "Wardrobes, sofas, tables and chairs, beds — quiet materials, made slowly.",
+      },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
 function Index() {
@@ -25,8 +46,9 @@ function Index() {
               <span className="italic text-[color:var(--gold)]">considered</span> home.
             </h1>
             <p className="mt-6 max-w-md text-base text-cream/70">
-              Sculpted seating, monolithic tables, and lighting made to soften
-              the hours. Shipped from our atelier to your floor.
+              Luxury wardrobes, elegant sofas, sculpted tables and chairs, and
+              enveloping beds. Made slowly in small runs. Sent thoughtfully to
+              your door.
             </p>
             <div className="mt-10 flex items-center gap-4">
               <Link
@@ -48,7 +70,7 @@ function Index() {
                 className="h-full w-full object-cover"
               />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-xs text-cream/80">
-                <span className="uppercase tracking-widest">Lumen Lounge Chair</span>
+                <span className="uppercase tracking-widest">Velvet Curve Sofa</span>
                 <span className="font-display text-sm">No. 01</span>
               </div>
             </div>
@@ -56,15 +78,15 @@ function Index() {
         </div>
       </section>
 
-      {/* Featured grid */}
+      {/* Category tiles */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex items-end justify-between">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-              Featured
+              Shop by room
             </p>
             <h2 className="mt-3 font-display text-3xl font-light md:text-4xl">
-              Pieces we're quietly proud of.
+              Four rooms. One quiet language.
             </h2>
           </div>
           <Link
@@ -75,6 +97,49 @@ function Index() {
           </Link>
         </div>
 
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {categorySlugs.map((slug) => {
+            const m = categoryMeta[slug];
+            return (
+              <Link
+                key={slug}
+                to="/category/$slug"
+                params={{ slug }}
+                className="group relative aspect-[4/5] overflow-hidden bg-muted"
+              >
+                <img
+                  src={m.image}
+                  alt={m.label}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute inset-x-5 bottom-5 text-cream">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-cream/70">
+                    Shop
+                  </p>
+                  <p className="mt-1 font-display text-xl">{m.label}</p>
+                  <p className="mt-1 text-xs italic text-[color:var(--gold)]">
+                    {m.tagline}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Featured */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="flex items-end justify-between">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+              New this season
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-light md:text-4xl">
+              Pieces we're quietly proud of.
+            </h2>
+          </div>
+        </div>
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((p) => (
             <ProductCard key={p.id} product={p} />
@@ -100,8 +165,8 @@ function Index() {
           </h2>
           <p className="mt-6 text-muted-foreground">
             Every piece is finished by hand in our workshop outside Milan.
-            We work in small runs with quiet materials — oak, travertine,
-            blackened brass, linen — and ship directly to your door.
+            We work in small runs with quiet materials — smoked oak, travertine,
+            blackened brass, Italian velvet — and ship directly to your door.
           </p>
           <Link
             to="/about"
