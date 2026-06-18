@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "@/lib/cart";
+import { categoryMeta, categorySlugs } from "@/lib/products";
 
 export function SiteHeader() {
   const { count } = useCart();
@@ -10,15 +11,36 @@ export function SiteHeader() {
         <Link to="/" className="font-display text-lg font-semibold tracking-[0.18em]">
           KIANVI<span className="text-accent">.</span>DECOR
         </Link>
-        <nav className="hidden items-center gap-9 text-sm md:flex">
+        <nav className="hidden items-center gap-7 text-sm md:flex">
           <Link to="/" className="hover:text-accent transition-colors" activeProps={{ className: "text-accent" }}>
             Home
           </Link>
-          <Link to="/shop" className="hover:text-accent transition-colors" activeProps={{ className: "text-accent" }}>
-            Shop
-          </Link>
+          <div className="group relative">
+            <Link
+              to="/shop"
+              className="hover:text-accent transition-colors"
+              activeProps={{ className: "text-accent" }}
+            >
+              Shop
+            </Link>
+            <div className="invisible absolute left-1/2 z-50 mt-3 w-56 -translate-x-1/2 rounded-md border border-border bg-popover p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+              {categorySlugs.map((slug) => (
+                <Link
+                  key={slug}
+                  to="/category/$slug"
+                  params={{ slug }}
+                  className="block rounded px-3 py-2 text-sm text-muted-foreground hover:bg-accent/10 hover:text-accent"
+                >
+                  {categoryMeta[slug].label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link to="/about" className="hover:text-accent transition-colors" activeProps={{ className: "text-accent" }}>
             Atelier
+          </Link>
+          <Link to="/contact" className="hover:text-accent transition-colors" activeProps={{ className: "text-accent" }}>
+            Contact
           </Link>
         </nav>
         <Link
