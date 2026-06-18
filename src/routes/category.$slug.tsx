@@ -98,7 +98,7 @@ function CategoryPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((p) => (
+          {list.map((p: Product) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
