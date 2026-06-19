@@ -63,7 +63,7 @@ export function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-muted-foreground sm:flex-row">
           <span>© {new Date().getFullYear()} KIANVI.DECOR. All rights reserved.</span>
-          <span>Crafted with restraint.</span>
+          <span>Crafted by: <a href="https://www.njinfotechs.com" target="_blank">NJ-InfoTech Solutions</a></span>
         </div>
       </div>
     </footer>
